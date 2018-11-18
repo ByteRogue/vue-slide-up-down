@@ -68,7 +68,14 @@ export default {
 
   methods: {
     layout () {
-      this.scrollHeight = this.el.scrollHeight
+      var children = this.el.children;
+      var totalHeight = 0;
+
+      for (var i = 0; i < children.length; i++) {
+        totalHeight += children[i].offsetHeight;
+      }
+      this.scrollHeight = totalHeight;
+
     }
   }
 }
